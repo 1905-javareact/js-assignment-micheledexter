@@ -12,4 +12,4 @@ function reverseStr(someStr) {
 }
 
 let str = "this is a string.";
-console.log(reverseStr(str));
+console.log(`reverse("${str}") is ${reverseStr(str)}`);
