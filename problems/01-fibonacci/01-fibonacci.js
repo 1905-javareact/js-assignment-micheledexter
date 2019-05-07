@@ -3,14 +3,22 @@ Define function: fib(n)
 Return the nth number in the fibonacci sequence. */
 
 function fib(n) {
-    // if (n <= 0) return 0; // if you want the sequence to start at 0, uncomment this line
-    if (n <= 1) return 1;
-    return fib(n-1) + fib(n-2);
+    let x = 0;
+    let y = 0;
+    let i = 0;
+    while (n >= 0) {
+        i = x + y;
+        x = y;
+        y = i;
+        if (y === 0 && x === 0) y = 1;
+        n--;
+    }
+    return x;
 }
 
 /*
 Test out the code
 */
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i <= 1000; i++) {
     console.log(`fib(${i}) = ${fib(i)}`);
 }
