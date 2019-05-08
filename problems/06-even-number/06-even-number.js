@@ -4,6 +4,7 @@ Return true if even, false if odd.
 Do not use % operator. */
 
 function isEven(someNum) {
+    if (isNaN(someNum) || Math.abs(someNum) === Infinity) throw 'Please use a valid number.';
     let num = someNum + '';
     if (num.match(/[\.]+/) !== null) return false;
     return num.match(/[02468]$/) !== null;
