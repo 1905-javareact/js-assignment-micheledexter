@@ -4,9 +4,11 @@ Use the bubble sort algorithm to sort the array.
 Return the sorted array. */
 
 function bubbleSort(numArray) {
+    if (typeof(numArray) !== 'object') throw 'Please use an array of numbers';
     let arr = numArray;
     for (let i = 1; i < arr.length-1; i++) {
-        for (let x = arr.length-1; x >- i; x--) {
+        for (let x = arr.length-1; x >= i; x--) {
+            if (isNaN(arr[x]) || isNaN(arr[x-1]) || Math.abs(arr[x]) === Infinity || Math.abs(arr[x-1]) === Infinity) throw 'Please make sure array items are valid.';
             if (arr[x] < arr[x-1]) {
                 let tmp = arr[x];
                 arr[x] = arr[x-1];
