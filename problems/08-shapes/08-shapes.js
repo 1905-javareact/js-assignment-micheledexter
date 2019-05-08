@@ -21,5 +21,51 @@ Example for printShape("Diamond", 5, "*");
   * 
 */
 function printShape(shape, height, character) {
-  
+  let newStr = '';
+  switch (shape) {
+    case 'Square':
+      let block = character.repeat(height);
+      for (let i = 0; i < height; i++) {
+        newStr += block;
+        if (i !== height - 1) newStr += '\n';
+      }
+      break;
+
+    case 'Triangle':
+      for (let i = 0; i < height; i++) {
+        newStr += character.repeat(i + 1);
+        if (i !== height - 1) newStr += '\n';
+      }
+      break;
+
+    case 'Diamond':
+      for (let i = 0; i < height; i += 2) {
+        let block = character.repeat(i + 1);
+        while (block.length < height) {
+          block = ' ' + block + ' ';
+        }
+        newStr += block + '\n';
+      }
+      for (let i = height - 1; i >= 0; i -= 2) {
+        if (i === height - 1) continue;
+        let block = character.repeat(i + 1);
+        while (block.length < height) {
+          block = ' ' + block + ' ';
+        }
+        newStr += block;
+        if (i > 1) newStr += '\n';
+      }
+      break;
+
+    default:
+      console.log("That wasn't an option.");
+  }
+  console.log(newStr);
 }
+
+printShape('Square', 5, '%');
+printShape('Triangle', 5, '$');
+printShape('Diamond', 5, '*');
+printShape('Square', 7, '#');
+printShape('Triangle', 8, '@');
+printShape('Diamond', 9, '!');
