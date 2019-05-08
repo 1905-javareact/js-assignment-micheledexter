@@ -2,6 +2,13 @@
 Define function: fib(n) 
 Return the nth number in the fibonacci sequence. */
 
+// this is the recursive version, but we don't want to use this
+// one because the stack gets overwhelmed too easily
+// function fib(n) {
+//     if (n <= 1) return 1;
+//     return (fib(n-1) + fib(n-2));
+// }
+
 function fib(n) {
     let x = 0;
     let y = 0;
@@ -19,6 +26,6 @@ function fib(n) {
 /*
 Test out the code
 */
-for (let i = 0; i <= 1000; i++) {
+for (let i = 0; i <= 10; i++) {
     console.log(`fib(${i}) = ${fib(i)}`);
 }
