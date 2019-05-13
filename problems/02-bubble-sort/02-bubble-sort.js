@@ -8,7 +8,7 @@ function bubbleSort(numArray) {
     let arr = numArray;
     for (let i = 1; i < arr.length-1; i++) {
         for (let x = arr.length-1; x >= i; x--) {
-            if (isNaN(arr[x]) || isNaN(arr[x-1]) || Math.abs(arr[x]) === Infinity || Math.abs(arr[x-1]) === Infinity) throw 'Please make sure array items are valid.';
+            if (typeof(arr[x]) === 'string' || isNaN(arr[x]) || typeof(arr[x-1]) === 'string' || isNaN(arr[x-1]) || Math.abs(arr[x]) === Infinity || Math.abs(arr[x-1]) === Infinity) throw 'Please make sure array items are valid.';
             if (arr[x] < arr[x-1]) {
                 let tmp = arr[x];
                 arr[x] = arr[x-1];
@@ -22,3 +22,10 @@ function bubbleSort(numArray) {
 let bubbleArr = [8, 9, 7, 6, 1, 3, 2, 4, 5];
 console.log(bubbleArr);
 console.log(bubbleSort(bubbleArr));
+bubbleArr = [9, 3, 1, 6, 2, '4', 5, 7, 8];
+console.log(bubbleArr);
+try {
+    console.log(bubbleSort(bubbleArr));
+} catch(e) {
+    console.log(e);
+}
