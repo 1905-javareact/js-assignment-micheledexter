@@ -15,6 +15,7 @@ Return true if someStr is a palindrome, otherwise return false */
 // Use the following function if we are doing literary palindromes (ignores
 // spaces, punctuation and capitalization)
 function isPalindrome(someStr) {
+    if (typeof(someStr) !== 'string') throw 'Please use a string as input.';
     let newStr = '';
     // Get rid of all the extra stuff in the string we don't need
     for (let i = 0; i < someStr.length; i++) {
