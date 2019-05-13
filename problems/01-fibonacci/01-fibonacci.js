@@ -11,7 +11,7 @@ Return the nth number in the fibonacci sequence. */
 // }
 
 function fib(n) {
-    if (n < 0 || isNaN(n) || n === Infinity) throw "Please use a positive number less than infinity.";
+    if (isNaN(n) || n < 0 || n === Number.abs(Infinity)) throw "Please use a positive number less than infinity.";
     let x = 0;
     let y = 0;
     let i = 0;
