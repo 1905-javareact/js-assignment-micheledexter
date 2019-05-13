@@ -10,10 +10,10 @@ function substring(someStr, startIndex, endIndex) {
     if (typeof(someStr) !== "string" || someStr.length < 1) {
         throw "Invalid string input";
     }
-    if (isNaN(startIndex) || startIndex < 0 || startIndex > someStr.length || startIndex > endIndex) {
+    if (typeof(startIndex) !== 'number' || isNaN(startIndex) || startIndex < 0 || startIndex > someStr.length || startIndex > endIndex || Math.abs(startIndex) === Infinity) {
         throw "Invalid start index";
     }
-    if (isNaN(endIndex) || endIndex > someStr.length) {
+    if (typeof(endIndex) !== 'number' || isNaN(endIndex) || endIndex > someStr.length || Math.abs(endIndex) === Infinity) {
         throw "Invalid end index";
     }
 
