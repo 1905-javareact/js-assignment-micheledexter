@@ -5,13 +5,14 @@ Return the nth number in the fibonacci sequence. */
 // this is the recursive version, but we don't want to use this
 // one because the stack gets overwhelmed too easily
 // function fib(n) {
+//     if (isNaN(n) || n < -1 || n === Math.abs(Infinity)) throw "Please use a positive number less than infinity";
 //     if (n <= 0) return 0;
 //     if (n <= 1) return 1;
 //     return (fib(n-1) + fib(n-2));
 // }
 
 function fib(n) {
-    if (isNaN(n) || n < 0 || n === Number.abs(Infinity)) throw "Please use a positive number less than infinity.";
+    if (isNaN(n) || n < 0 || n === Math.abs(Infinity)) throw "Please use a positive number less than infinity.";
     let x = 0;
     let y = 0;
     let i = 0;
