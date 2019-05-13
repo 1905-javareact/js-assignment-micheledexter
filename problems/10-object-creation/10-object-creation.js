@@ -2,6 +2,9 @@
 Create an object using an object literal, constructor function, and es6 class.
 The object should have the fields name and age.*/
 
+// Technically we don't need any error handling with these since variables are
+// allowed to be any value we want, but if we wanted to have input control,
+// we could do that if we wanted. I opt not to do that for these examples.
 let homer = {
     name: 'Homer',
     occupation: 'Nuclear Safety Inspector',
