@@ -3,7 +3,7 @@ Define function: reverseStr(someStr)
 Reverse and return the String. */
 
 function reverseStr(someStr) {
-    if (typeof(someStr) !== 'string') throw "Please use a string";
+    if (typeof(someStr) !== 'string' || someStr.length < 1) throw "Please use a non-empty string";
     let str = someStr;
     let newStr = '';
     for (let i of str) {
