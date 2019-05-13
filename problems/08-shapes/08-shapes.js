@@ -21,6 +21,8 @@ Example for printShape("Diamond", 5, "*");
   * 
 */
 function printShape(shape, height, character) {
+  if (isNaN(height) || height < 1) throw 'Please use a value for height equal to or greater than 1';
+  if (typeof(character) !== 'string' && character.length !== 1) throw 'Please use a single character string';
   let newStr = '';
   switch (shape) {
     case 'Square':
@@ -39,6 +41,7 @@ function printShape(shape, height, character) {
       break;
 
     case 'Diamond':
+      if (height < 3) throw 'Sorry, but for a diamond we need a height of at least 3';
       for (let i = 0; i < height; i += 2) {
         let block = character.repeat(i + 1);
         while (block.length < height) {
