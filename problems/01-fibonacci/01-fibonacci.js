@@ -12,7 +12,7 @@ Return the nth number in the fibonacci sequence. */
 // }
 
 function fib(n) {
-    if (isNaN(n) || n < 0 || n === Math.abs(Infinity)) throw "Please use a positive number less than infinity.";
+    if (typeof(n) !== 'number' || isNaN(n) || n < 0 || Math.abs(n) === Infinity) throw "Please use a positive number less than infinity.";
     let x = 0;
     let y = 0;
     let i = 0;
