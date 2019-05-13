@@ -6,6 +6,7 @@ Return true if someStr is a palindrome, otherwise return false */
 // using simple palindromes, and not literary palindromes.
 
 function isPalindrome(someStr) {
+    if (typeof(someStr) !== 'string') throw 'Please use a string.';
     let str = someStr;
     for (let i = 0; i < str.length / 2; i++) {
         if (str.substr(i, 1) !== str.substr(str.length-(i+1), 1)) return false;
