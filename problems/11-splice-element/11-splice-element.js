@@ -7,6 +7,11 @@ Splice the element at the provided index in the array.
 // using the splice prototype method.
 
 function spliceElement(someArr, index) {
+    if (!Array.isArray(someArr)) throw 'Please use a valid array object.';
+    // in JS, an index is allowed to be negative, so we only enforce integer status
+    // We _could_ do some of our own coercion, but I don't feel like doing that
+    // because I think it promotes bad programming practices
+    if (typeof(index) !== 'number' && Number.isInteger(index)) throw 'Please use a valid integer for the index';
     let newArr = [];
     let spliced = null;
     for (let i = someArr.length - 1; i >= 0; i--) {
